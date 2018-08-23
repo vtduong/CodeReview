@@ -1,0 +1,16 @@
+package linkedListTest;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class LinkedListTest {
+
+	@Test
+	void test() {
+		LinkedList list = new LinkedList();
+		assertNull(list.getHead());
+		assertNull(list.getTail());
+	}
+
+}

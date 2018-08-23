@@ -1,0 +1,43 @@
+package linkedListTest;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import linkedList.LinkedList;
+
+class LinkedListTest {
+
+	@Test
+	void test() {
+		LinkedList list = new LinkedList();
+		assertNull(list.getHead());
+		assertNull(list.getTail());
+		list.append(0);
+		list.insert(0, 1);
+		list.insert(1, 2);
+		assertEquals(0, list.getData(2));
+		assertEquals(2, list.getData(1));
+		list.append(3);
+		assertEquals(3, list.getData(list.getLength() -1));
+		assertEquals(4, list.getLength());
+		assertEquals(2, list.getData(1));
+		list.printList();
+		assertEquals(4, list.getLength());
+		int num = list.delete(list.getLength()-1);
+		assertEquals(3, num);
+		list.printList();
+		assertEquals(3, list.getLength());
+		assertEquals(0, list.getData(list.getLength()-1));
+		int num1 = list.delete(1);
+		assertEquals(2, num1);
+		int tail = list.delete(list.getLength()-1);
+		assertEquals(0, tail);
+		int head = list.delete(0);
+		assertEquals(1, head);
+		assertNull(list.getHead());
+		assertNull(list.getTail());
+		
+	}
+
+}
